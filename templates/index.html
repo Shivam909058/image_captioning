@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Image Captioning</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <h1>Upload an image to get a caption</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    {% if caption %}
+        <h2>Caption: {{ caption }}</h2>
+        <img src="{{ image_path }}" alt="Uploaded image">
+    {% endif %}
+</body>
+</html>
